@@ -1,0 +1,66 @@
+[
+  {
+    "id": "seed-1",
+    "friendId": 1,
+    "type": "text",
+    "title": "Text with Maya Chen",
+    "date": "2026-04-10T08:30:00.000Z"
+  },
+  {
+    "id": "seed-2",
+    "friendId": 2,
+    "type": "call",
+    "title": "Call with Jordan Alvarez",
+    "date": "2026-04-02T16:15:00.000Z"
+  },
+  {
+    "id": "seed-3",
+    "friendId": 3,
+    "type": "video",
+    "title": "Video with Amina Rahman",
+    "date": "2026-03-27T13:45:00.000Z"
+  },
+  {
+    "id": "seed-4",
+    "friendId": 4,
+    "type": "call",
+    "title": "Call with Leo Martinez",
+    "date": "2026-04-08T06:50:00.000Z"
+  },
+  {
+    "id": "seed-5",
+    "friendId": 5,
+    "type": "text",
+    "title": "Text with Priya Sen",
+    "date": "2026-04-07T11:20:00.000Z"
+  },
+  {
+    "id": "seed-6",
+    "friendId": 6,
+    "type": "video",
+    "title": "Video with Daniel Kim",
+    "date": "2026-03-25T18:00:00.000Z"
+  },
+  {
+    "id": "seed-7",
+    "friendId": 7,
+    "type": "text",
+    "title": "Text with Sara Ahmed",
+    "date": "2026-04-11T20:35:00.000Z"
+  },
+  {
+    "id": "seed-8",
+    "friendId": 8,
+    "type": "call",
+    "title": "Call with Ethan Brooks",
+    "date": "2026-04-04T09:10:00.000Z"
+  },
+  {
+    "id": "seed-9",
+    "friendId": 1,
+    "type": "video",
+    "title": "Video with Maya Chen",
+    "date": "2026-03-28T15:05:00.000Z"
+  }
+]
+

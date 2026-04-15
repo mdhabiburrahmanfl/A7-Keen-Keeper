@@ -1,0 +1,99 @@
+[
+  {
+    "id": 1,
+    "name": "Maya Chen",
+    "picture": "https://randomuser.me/api/portraits/women/44.jpg",
+    "email": "maya.chen@example.com",
+    "days_since_contact": 5,
+    "status": "on-track",
+    "tags": ["college", "book club"],
+    "bio": "Maya and I met in our university design lab and still swap notes on books, coffee spots, and side projects.",
+    "goal": 14,
+    "next_due_date": "2026-04-24"
+  },
+  {
+    "id": 2,
+    "name": "Jordan Alvarez",
+    "picture": "https://randomuser.me/api/portraits/men/52.jpg",
+    "email": "jordan.alvarez@example.com",
+    "days_since_contact": 13,
+    "status": "almost due",
+    "tags": ["startup", "mentor"],
+    "bio": "Jordan was my first team lead at a startup and always sends brutally helpful advice when work gets messy.",
+    "goal": 14,
+    "next_due_date": "2026-04-16"
+  },
+  {
+    "id": 3,
+    "name": "Amina Rahman",
+    "picture": "https://randomuser.me/api/portraits/women/68.jpg",
+    "email": "amina.rahman@example.com",
+    "days_since_contact": 19,
+    "status": "overdue",
+    "tags": ["family", "travel buddy"],
+    "bio": "Amina is my cousin and the person I plan spontaneous food trips and holiday itineraries with.",
+    "goal": 14,
+    "next_due_date": "2026-04-10"
+  },
+  {
+    "id": 4,
+    "name": "Leo Martinez",
+    "picture": "https://randomuser.me/api/portraits/men/31.jpg",
+    "email": "leo.martinez@example.com",
+    "days_since_contact": 7,
+    "status": "on-track",
+    "tags": ["climbing", "close friend"],
+    "bio": "Leo is my climbing partner, accountability buddy, and the first person I call when I need an honest reset.",
+    "goal": 10,
+    "next_due_date": "2026-04-18"
+  },
+  {
+    "id": 5,
+    "name": "Priya Sen",
+    "picture": "https://randomuser.me/api/portraits/women/24.jpg",
+    "email": "priya.sen@example.com",
+    "days_since_contact": 8,
+    "status": "almost due",
+    "tags": ["neighbor", "weekend brunch"],
+    "bio": "Priya lives two blocks away and somehow knows every new cafe, pop-up market, and neighborhood story.",
+    "goal": 9,
+    "next_due_date": "2026-04-16"
+  },
+  {
+    "id": 6,
+    "name": "Daniel Kim",
+    "picture": "https://randomuser.me/api/portraits/men/76.jpg",
+    "email": "daniel.kim@example.com",
+    "days_since_contact": 21,
+    "status": "overdue",
+    "tags": ["career", "mentor"],
+    "bio": "Daniel used to manage me and still checks in about long-term career moves, not just the next job title.",
+    "goal": 14,
+    "next_due_date": "2026-04-08"
+  },
+  {
+    "id": 7,
+    "name": "Sara Ahmed",
+    "picture": "https://randomuser.me/api/portraits/women/12.jpg",
+    "email": "sara.ahmed@example.com",
+    "days_since_contact": 4,
+    "status": "on-track",
+    "tags": ["volunteering", "creative"],
+    "bio": "Sara and I met while organizing a local literacy drive, and we still brainstorm community ideas over voice notes.",
+    "goal": 12,
+    "next_due_date": "2026-04-23"
+  },
+  {
+    "id": 8,
+    "name": "Ethan Brooks",
+    "picture": "https://randomuser.me/api/portraits/men/18.jpg",
+    "email": "ethan.brooks@example.com",
+    "days_since_contact": 11,
+    "status": "almost due",
+    "tags": ["music", "long-distance"],
+    "bio": "Ethan moved abroad for music production, so our check-ins are usually voice calls about albums, gigs, and family life.",
+    "goal": 12,
+    "next_due_date": "2026-04-16"
+  }
+]
+
