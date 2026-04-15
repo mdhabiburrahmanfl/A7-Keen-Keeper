@@ -1,7 +1,6 @@
 import { BarChart3, Clock3, House, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import logo from "../../assets/logo.png";
 
 const navigationLinks = [
   { to: "/", label: "Home", Icon: House },
@@ -25,16 +24,16 @@ function Navbar() {
         to={link.to}
         className={({ isActive }) =>
           [
-            "flex items-center gap-2 rounded-md px-4 py-2.5 text-sm font-medium transition-colors duration-200",
+            "flex items-center gap-2 rounded-md px-4 py-2.5 text-[15px] font-medium transition-colors duration-200",
             compact ? "w-full justify-between" : "",
             isActive
-              ? "bg-[#295846] text-white"
-              : "text-slate-500 hover:bg-slate-100 hover:text-slate-900",
+              ? "bg-[#295846] !text-white"
+              : "text-[#64748b] hover:text-slate-900",
           ].join(" ")
         }
       >
-        <span className="flex items-center gap-2">
-          <link.Icon size={16} />
+        <span className="flex items-center gap-2 text-inherit">
+          <link.Icon size={17} strokeWidth={1.9} />
           {link.label}
         </span>
       </NavLink>
@@ -46,20 +45,18 @@ function Navbar() {
       <div className="section-wrap">
         <div className="flex items-center justify-between py-4">
           <Link to="/" className="flex items-center">
-            <img
-              src={logo}
-              alt="KeenKeeper logo"
-              className="h-8 w-auto sm:h-9"
-            />
+            <span className="font-heading text-[24px] font-bold tracking-[-0.04em] text-slate-800">
+              Keen<span className="text-[#295846]">Keeper</span>
+            </span>
           </Link>
 
-          <nav className="hidden items-center gap-2 md:flex">
+          <nav className="hidden items-center gap-1.5 md:flex">
             {navigationLinks.map((link) => renderNavLink(link))}
           </nav>
 
           <button
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-700 md:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-700 md:hidden"
             onClick={() => setMobileOpen((currentValue) => !currentValue)}
             aria-label="Toggle navigation"
           >

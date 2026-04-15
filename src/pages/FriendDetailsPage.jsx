@@ -1,4 +1,4 @@
-import { Archive, BellRing, PencilLine, Trash2 } from "lucide-react";
+import { Archive, BellRing, Mail, PencilLine, Trash2 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { toast } from "sonner";
@@ -95,37 +95,51 @@ function FriendDetailsPage() {
         <div className="space-y-4">
           <article className="dashboard-card p-8 text-center">
             <div className="flex flex-col items-center gap-5">
-            <img
-              src={friend.picture}
-              alt={friend.name}
-              className="h-20 w-20 rounded-full object-cover"
-            />
+              <img
+                src={friend.picture}
+                alt={friend.name}
+                className="h-20 w-20 rounded-full object-cover"
+              />
 
-            <div>
-              <h1 className="font-heading text-[2.4rem] font-bold tracking-[-0.04em] text-slate-800">
-                {friend.name}
-              </h1>
+              <div>
+                <h1 className="font-heading text-[2.4rem] font-bold tracking-[-0.04em] text-slate-800">
+                  {friend.name}
+                </h1>
 
-              <div className="mt-4 flex flex-col items-center gap-3">
-                <StatusBadge status={friend.status} />
+                <div className="mt-4 flex flex-col items-center gap-3">
+                  <StatusBadge status={friend.status} />
 
-                <div className="flex flex-wrap justify-center gap-2">
-                {friend.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-full bg-[#c6f6d4] px-3 py-1 text-xs font-medium uppercase text-[#295846]"
-                  >
-                    {tag}
-                  </span>
-                ))}
+                  <div className="flex flex-wrap justify-center gap-2">
+                    {friend.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full bg-[#c6f6d4] px-3 py-1 text-xs font-medium uppercase text-[#295846]"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
 
-              <p className="text-lg italic leading-8 text-[#7183a1]">
-                "{friend.bio}"
-              </p>
-              <p className="text-sm text-slate-500">Preferred: email</p>
+              <div className="w-full rounded-xl bg-slate-50 px-4 py-4 text-left">
+                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-400">
+                  Bio
+                </p>
+                <p className="mt-2 text-base leading-7 text-[#7183a1]">
+                  {friend.bio}
+                </p>
+              </div>
+
+              <div className="flex w-full items-center gap-3 rounded-xl bg-slate-50 px-4 py-4 text-left">
+                <Mail size={18} className="shrink-0 text-slate-400" />
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-400">
+                    Email
+                  </p>
+                  <p className="mt-1 text-sm text-slate-700">{friend.email}</p>
+                </div>
+              </div>
             </div>
           </article>
 

@@ -61,6 +61,19 @@
     "type": "video",
     "title": "Video with Maya Chen",
     "date": "2026-03-28T15:05:00.000Z"
+  },
+  {
+    "id": "seed-10",
+    "friendId": 9,
+    "type": "text",
+    "title": "Text with Nadia Hassan",
+    "date": "2026-04-09T10:40:00.000Z"
+  },
+  {
+    "id": "seed-11",
+    "friendId": 10,
+    "type": "call",
+    "title": "Call with Omar Faruq",
+    "date": "2026-04-01T19:25:00.000Z"
   }
 ]
-

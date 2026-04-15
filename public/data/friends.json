@@ -94,6 +94,29 @@
     "bio": "Ethan moved abroad for music production, so our check-ins are usually voice calls about albums, gigs, and family life.",
     "goal": 12,
     "next_due_date": "2026-04-16"
+  },
+  {
+    "id": 9,
+    "name": "Nadia Hassan",
+    "picture": "https://randomuser.me/api/portraits/women/33.jpg",
+    "email": "nadia.hassan@example.com",
+    "days_since_contact": 6,
+    "status": "on-track",
+    "tags": ["work", "design"],
+    "bio": "Nadia is a former teammate who still sends thoughtful feedback on product ideas and always remembers to check in after big launches.",
+    "goal": 10,
+    "next_due_date": "2026-04-19"
+  },
+  {
+    "id": 10,
+    "name": "Omar Faruq",
+    "picture": "https://randomuser.me/api/portraits/men/41.jpg",
+    "email": "omar.faruq@example.com",
+    "days_since_contact": 15,
+    "status": "overdue",
+    "tags": ["school", "football"],
+    "bio": "Omar has been a close friend since school days, and we usually reconnect through match discussions, family updates, and late-night calls.",
+    "goal": 12,
+    "next_due_date": "2026-04-13"
   }
 ]
-

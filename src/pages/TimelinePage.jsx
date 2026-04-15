@@ -30,16 +30,18 @@ function TimelinePage() {
   }
 
   return (
-    <div className="section-wrap space-y-6 pt-8">
-      <div className="flex flex-col gap-3">
-        <span className="eyebrow">Timeline</span>
-        <h1 className="text-4xl font-bold text-slate-950">Timeline</h1>
-        <p className="max-w-2xl text-sm leading-7 text-slate-500">
+    <div className="section-wrap pb-10 pt-10">
+      <div className="mx-auto max-w-6xl space-y-6">
+        <div className="flex flex-col gap-3">
+          <h1 className="font-heading text-5xl font-bold tracking-[-0.04em] text-slate-800">
+            Timeline
+          </h1>
+          <p className="max-w-2xl text-sm leading-7 text-slate-500">
           Browse every logged call, text, and video touchpoint in one place.
-        </p>
-      </div>
+          </p>
+        </div>
 
-      <section className="surface-card p-5 sm:p-6">
+      <section className="dashboard-card p-5 sm:p-6">
         <div className="grid gap-4 lg:grid-cols-[1fr_auto_auto] lg:items-center">
           <div className="flex flex-wrap gap-2">
             {filterOptions.map((option) => (
@@ -49,7 +51,7 @@ function TimelinePage() {
                 onClick={() => setActiveFilter(option)}
                 className={`rounded-full px-4 py-2.5 text-sm font-semibold transition ${
                   activeFilter === option
-                    ? "bg-slate-900 text-white"
+                    ? "bg-[#295846] text-white"
                     : "bg-slate-100 text-slate-600 hover:bg-slate-200"
                 }`}
               >
@@ -88,13 +90,13 @@ function TimelinePage() {
       {loading ? <LoadingScreen label="Loading timeline..." /> : null}
 
       {!loading && error ? (
-        <div className="surface-card p-6 text-sm text-rose-600">{error}</div>
+        <div className="dashboard-card p-6 text-sm text-rose-600">{error}</div>
       ) : null}
 
       {!loading && !error ? (
         <section className="space-y-4">
           {visibleEntries.length === 0 ? (
-            <div className="surface-card p-8 text-center">
+            <div className="dashboard-card p-8 text-center">
               <h2 className="text-2xl font-bold text-slate-950">
                 No entries match this filter
               </h2>
@@ -114,9 +116,9 @@ function TimelinePage() {
           )}
         </section>
       ) : null}
+      </div>
     </div>
   );
 }
 
 export default TimelinePage;
-

@@ -91,30 +91,29 @@ function StatsPage() {
   ];
 
   return (
-    <div className="section-wrap space-y-6 pt-8">
-      <div className="flex flex-col gap-3">
-        <span className="eyebrow">Friendship Analytics</span>
-        <h1 className="text-4xl font-bold text-slate-950">
-          Friendship Analytics
-        </h1>
-        <p className="max-w-2xl text-sm leading-7 text-slate-500">
+    <div className="section-wrap pb-10 pt-10">
+      <div className="mx-auto max-w-6xl space-y-6">
+        <div className="flex flex-col gap-3">
+          <h1 className="font-heading text-5xl font-bold tracking-[-0.04em] text-slate-800">
+            Friendship Analytics
+          </h1>
+          <p className="max-w-2xl text-sm leading-7 text-slate-500">
           Measure how you tend to keep in touch and which interaction styles are
           carrying most of the relationship maintenance.
-        </p>
-      </div>
+          </p>
+        </div>
 
       {loading ? <LoadingScreen label="Building your analytics..." /> : null}
 
       {!loading && error ? (
-        <div className="surface-card p-6 text-sm text-rose-600">{error}</div>
+        <div className="dashboard-card p-6 text-sm text-rose-600">{error}</div>
       ) : null}
 
       {!loading && !error ? (
         <section className="grid gap-4 lg:grid-cols-[1.2fr_0.8fr]">
-          <article className="surface-card p-6">
+          <article className="dashboard-card p-6">
             <div className="flex flex-col gap-3">
-              <span className="eyebrow">Interaction Breakdown</span>
-              <h2 className="text-2xl font-bold text-slate-950">
+              <h2 className="text-2xl font-semibold text-[#295846]">
                 Calls, texts, and video check-ins
               </h2>
             </div>
@@ -146,7 +145,7 @@ function StatsPage() {
                 {chartData.map((item) => (
                   <div
                     key={item.name}
-                    className="rounded-[1.5rem] border border-slate-100 bg-slate-50 p-4"
+                    className="rounded-xl border border-slate-200 bg-slate-50 p-4"
                   >
                     <div className="flex items-center gap-3">
                       <span
@@ -178,9 +177,9 @@ function StatsPage() {
           </div>
         </section>
       ) : null}
+      </div>
     </div>
   );
 }
 
 export default StatsPage;
-
