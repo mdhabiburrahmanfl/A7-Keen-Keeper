@@ -7,10 +7,9 @@ function StatusBadge({ status }) {
     <span
       className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold ${meta.className}`}
     >
-      {meta.label}
+      {meta.label.replace("On-track", "On-Track")}
     </span>
   );
 }
 
 export default StatusBadge;
-

@@ -1,4 +1,4 @@
-import { Archive, Clock3, Mail, PencilLine, Trash2 } from "lucide-react";
+import { Archive, BellRing, PencilLine, Trash2 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { toast } from "sonner";
@@ -16,19 +16,19 @@ const quickActions = [
     type: "call",
     label: "Call",
     icon: callIcon,
-    className: "bg-sky-50 text-sky-700 hover:bg-sky-100",
+    className: "border border-slate-200 bg-slate-50 text-slate-800 hover:bg-slate-100",
   },
   {
     type: "text",
     label: "Text",
     icon: textIcon,
-    className: "bg-cyan-50 text-cyan-700 hover:bg-cyan-100",
+    className: "border border-slate-200 bg-slate-50 text-slate-800 hover:bg-slate-100",
   },
   {
     type: "video",
     label: "Video",
     icon: videoIcon,
-    className: "bg-violet-50 text-violet-700 hover:bg-violet-100",
+    className: "border border-slate-200 bg-slate-50 text-slate-800 hover:bg-slate-100",
   },
 ];
 
@@ -90,120 +90,105 @@ function FriendDetailsPage() {
   }
 
   return (
-    <div className="section-wrap space-y-6 pt-8">
-      <div>
-        <span className="eyebrow">Friend Details</span>
-        <h1 className="mt-3 text-4xl font-bold text-slate-950">
-          {friend.name}
-        </h1>
-      </div>
-
-      <section className="grid gap-6 xl:grid-cols-[1.05fr_1.35fr]">
-        <article className="surface-card p-6 sm:p-8">
-          <div className="flex flex-col gap-6">
+    <div className="section-wrap pb-8 pt-14">
+      <section className="mx-auto grid max-w-5xl gap-6 xl:grid-cols-[0.92fr_1.9fr]">
+        <div className="space-y-4">
+          <article className="dashboard-card p-8 text-center">
+            <div className="flex flex-col items-center gap-5">
             <img
               src={friend.picture}
               alt={friend.name}
-              className="h-36 w-36 rounded-[2rem] object-cover ring-4 ring-slate-100"
+              className="h-20 w-20 rounded-full object-cover"
             />
 
             <div>
-              <div className="flex flex-wrap items-center gap-3">
-                <h2 className="text-3xl font-bold text-slate-950">
-                  {friend.name}
-                </h2>
-                <StatusBadge status={friend.status} />
-              </div>
+              <h1 className="font-heading text-[2.4rem] font-bold tracking-[-0.04em] text-slate-800">
+                {friend.name}
+              </h1>
 
-              <div className="mt-4 flex flex-wrap gap-2">
+              <div className="mt-4 flex flex-col items-center gap-3">
+                <StatusBadge status={friend.status} />
+
+                <div className="flex flex-wrap justify-center gap-2">
                 {friend.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700"
+                    className="rounded-full bg-[#c6f6d4] px-3 py-1 text-xs font-medium uppercase text-[#295846]"
                   >
                     {tag}
                   </span>
                 ))}
+                </div>
               </div>
             </div>
 
-            <p className="text-sm leading-7 text-slate-600">{friend.bio}</p>
-
-            <div className="inline-flex items-center gap-3 rounded-2xl bg-slate-50 px-4 py-3 text-sm text-slate-600">
-              <Mail size={18} className="text-slate-400" />
-              {friend.email}
+              <p className="text-lg italic leading-8 text-[#7183a1]">
+                "{friend.bio}"
+              </p>
+              <p className="text-sm text-slate-500">Preferred: email</p>
             </div>
+          </article>
 
-            <div className="grid gap-3 sm:grid-cols-3">
-              <button
-                type="button"
-                className="inline-flex items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-300 hover:bg-slate-50"
-              >
-                <Clock3 size={17} />
-                Snooze 2 Weeks
-              </button>
-              <button
-                type="button"
-                className="inline-flex items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-300 hover:bg-slate-50"
-              >
-                <Archive size={17} />
-                Archive
-              </button>
-              <button
-                type="button"
-                className="inline-flex items-center justify-center gap-2 rounded-2xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm font-semibold text-rose-700 transition hover:bg-rose-100"
-              >
-                <Trash2 size={17} />
-                Delete
-              </button>
-            </div>
+          <div className="space-y-3">
+            <button
+              type="button"
+              className="dashboard-card inline-flex w-full items-center justify-center gap-3 px-4 py-4 text-lg font-medium text-slate-800 transition hover:bg-slate-50"
+            >
+              <BellRing size={18} />
+              Snooze 2 Weeks
+            </button>
+            <button
+              type="button"
+              className="dashboard-card inline-flex w-full items-center justify-center gap-3 px-4 py-4 text-lg font-medium text-slate-800 transition hover:bg-slate-50"
+            >
+              <Archive size={18} />
+              Archive
+            </button>
+            <button
+              type="button"
+              className="dashboard-card inline-flex w-full items-center justify-center gap-3 px-4 py-4 text-lg font-medium text-[#ff4b47] transition hover:bg-rose-50"
+            >
+              <Trash2 size={18} />
+              Delete
+            </button>
           </div>
-        </article>
+        </div>
 
         <div className="space-y-6">
           <section className="grid gap-4 sm:grid-cols-3">
             <StatCard
               label="Days Since Contact"
               value={friend.days_since_contact}
-              helpText="Updated automatically whenever you log a check-in."
             />
+            <StatCard label="Goal (Days)" value={friend.goal} />
             <StatCard
-              label="Goal"
-              value={`${friend.goal} days`}
-              helpText="How often you want to reach out to this friend."
-            />
-            <StatCard
-              label="Next Due Date"
+              label="Next Due"
               value={formatDisplayDate(friend.next_due_date)}
-              helpText="The next suggested date to reconnect."
             />
           </section>
 
-          <section className="surface-card p-6">
+          <section className="dashboard-card p-6">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
               <div>
-                <span className="eyebrow">Relationship Goal</span>
-                <h2 className="mt-3 text-2xl font-bold text-slate-950">
-                  Keep {friend.name.split(" ")[0]} in the loop every{" "}
-                  {friend.goal} days.
+                <h2 className="text-2xl font-semibold text-[#295846]">
+                  Relationship Goal
                 </h2>
-                <p className="mt-2 max-w-xl text-sm leading-7 text-slate-500">
-                  Adjust the cadence whenever this relationship needs more or
-                  less attention.
+                <p className="mt-5 text-xl text-[#7183a1]">
+                  Connect every <span className="font-bold text-slate-800">{friend.goal} days</span>
                 </p>
               </div>
               <button
                 type="button"
                 onClick={() => setIsEditingGoal((currentValue) => !currentValue)}
-                className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
+                className="inline-flex items-center gap-2 rounded-md border border-slate-200 bg-slate-50 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-100"
               >
-                <PencilLine size={16} />
+                <PencilLine size={15} />
                 Edit
               </button>
             </div>
 
             {isEditingGoal ? (
-              <div className="mt-5 flex flex-col gap-3 rounded-[1.5rem] border border-slate-200 bg-slate-50 p-4 sm:flex-row sm:items-center">
+              <div className="mt-5 flex flex-col gap-3 rounded-xl border border-slate-200 bg-slate-50 p-4 sm:flex-row sm:items-center">
                 <label className="text-sm font-medium text-slate-700">
                   Goal in days
                 </label>
@@ -212,12 +197,12 @@ function FriendDetailsPage() {
                   min="1"
                   value={pendingGoal}
                   onChange={(event) => setPendingGoal(event.target.value)}
-                  className="h-12 rounded-2xl border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none transition focus:border-slate-400"
+                  className="h-12 rounded-md border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none transition focus:border-slate-400"
                 />
                 <button
                   type="button"
                   onClick={handleGoalSave}
-                  className="rounded-2xl bg-slate-900 px-4 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
+                  className="rounded-md bg-[#295846] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#224839]"
                 >
                   Save
                 </button>
@@ -225,25 +210,23 @@ function FriendDetailsPage() {
             ) : null}
           </section>
 
-          <section className="surface-card p-6">
-            <span className="eyebrow">Quick Check-In</span>
-            <div className="mt-3 flex flex-col gap-3 sm:flex-row">
+          <section className="dashboard-card p-6">
+            <h2 className="text-2xl font-semibold text-[#295846]">
+              Quick Check-In
+            </h2>
+            <div className="mt-5 flex flex-col gap-4 sm:flex-row">
               {quickActions.map((action) => (
                 <button
                   key={action.type}
                   type="button"
                   onClick={() => handleCheckIn(action.type)}
-                  className={`flex flex-1 items-center justify-center gap-3 rounded-[1.5rem] px-5 py-4 text-sm font-semibold transition ${action.className}`}
+                  className={`flex min-h-[116px] flex-1 flex-col items-center justify-center gap-3 rounded-xl px-5 py-4 text-xl font-medium transition ${action.className}`}
                 >
-                  <img src={action.icon} alt="" className="h-6 w-6" />
+                  <img src={action.icon} alt="" className="h-8 w-8" />
                   {action.label}
                 </button>
               ))}
             </div>
-            <p className="mt-4 text-sm leading-7 text-slate-500">
-              Every action creates a fresh timeline entry with today&apos;s date
-              so the rest of the dashboard stays up to date.
-            </p>
           </section>
         </div>
       </section>
@@ -252,4 +235,3 @@ function FriendDetailsPage() {
 }
 
 export default FriendDetailsPage;
-
