@@ -157,6 +157,23 @@ export function AppDataProvider({ children }) {
     }
   });
 
+  const currentMonth = new Date().getMonth();
+  const currentYear = new Date().getFullYear();
+  const interactionsThisMonth = timelineEntries.filter((entry) => {
+    const entryDate = new Date(entry.date);
+    return (
+      entryDate.getMonth() === currentMonth &&
+      entryDate.getFullYear() === currentYear
+    );
+  }).length;
+
+  const onTrackFriends = friendSnapshots.filter(
+    (friend) => friend.status === "on-track",
+  ).length;
+  const needAttentionFriends = friendSnapshots.filter(
+    (friend) => friend.status === "almost due" || friend.status === "overdue",
+  ).length;
+
   function getFriendById(friendId) {
     return friendSnapshots.find(
       (friend) => String(friend.id) === String(friendId),
@@ -203,6 +220,9 @@ export function AppDataProvider({ children }) {
     interactionCounts,
     summary: {
       totalFriends: friendSnapshots.length,
+      onTrackFriends,
+      needAttentionFriends,
+      interactionsThisMonth,
       overdueFriends: friendSnapshots.filter(
         (friend) => friend.status === "overdue",
       ).length,
@@ -230,4 +250,3 @@ export function useAppData() {
 
   return context;
 }
-

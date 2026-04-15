@@ -25,11 +25,11 @@ function Navbar() {
         to={link.to}
         className={({ isActive }) =>
           [
-            "flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-medium transition-all duration-200",
+            "flex items-center gap-2 rounded-md px-4 py-2.5 text-sm font-medium transition-colors duration-200",
             compact ? "w-full justify-between" : "",
             isActive
-              ? "bg-slate-900 text-white shadow-lg shadow-slate-900/15"
-              : "text-slate-600 hover:bg-white hover:text-slate-900",
+              ? "bg-[#295846] text-white"
+              : "text-slate-500 hover:bg-slate-100 hover:text-slate-900",
           ].join(" ")
         }
       >
@@ -42,7 +42,7 @@ function Navbar() {
   }
 
   return (
-    <header className="sticky top-0 z-40 border-b border-white/60 bg-white/75 backdrop-blur-xl">
+    <header className="sticky top-0 z-40 border-b border-slate-200 bg-white">
       <div className="section-wrap">
         <div className="flex items-center justify-between py-4">
           <Link to="/" className="flex items-center">
@@ -59,7 +59,7 @@ function Navbar() {
 
           <button
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm md:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-700 md:hidden"
             onClick={() => setMobileOpen((currentValue) => !currentValue)}
             aria-label="Toggle navigation"
           >
@@ -78,4 +78,3 @@ function Navbar() {
 }
 
 export default Navbar;
-

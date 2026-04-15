@@ -1,18 +1,14 @@
 function SummaryCard({ icon: Icon, title, value, subtitle, accent }) {
   return (
-    <article className="surface-card h-full p-5">
-      <div className="flex items-start justify-between gap-4">
-        <div>
-          <p className="text-sm font-medium text-slate-500">{title}</p>
-          <h3 className="mt-3 text-3xl font-bold text-slate-950">{value}</h3>
-        </div>
-        <div
-          className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl ${accent}`}
-        >
-          <Icon size={22} />
-        </div>
+    <article className="dashboard-card flex h-full flex-col items-center justify-center p-6 text-center">
+      <div
+        className={`mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full ${accent}`}
+      >
+        <Icon size={18} />
       </div>
-      <p className="mt-6 text-sm leading-6 text-slate-500">{subtitle}</p>
+      <h3 className="text-4xl font-bold text-[#295846]">{value}</h3>
+      <p className="mt-3 text-sm font-medium text-slate-500">{title}</p>
+      <p className="mt-1 text-xs leading-5 text-slate-400">{subtitle}</p>
     </article>
   );
 }

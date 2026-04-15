@@ -14,30 +14,30 @@ const summaryConfig = [
   {
     key: "totalFriends",
     title: "Total Friends",
-    subtitle: "Everyone you are intentionally keeping close right now.",
+    subtitle: "",
     icon: Users,
-    accent: "bg-slate-900 text-white",
+    accent: "bg-[#ecf7ee] text-[#295846]",
   },
   {
-    key: "overdueFriends",
-    title: "Overdue Check-ins",
-    subtitle: "These friendships need attention before they drift too far.",
-    icon: AlertTriangle,
-    accent: "bg-rose-100 text-rose-700",
-  },
-  {
-    key: "almostDueFriends",
-    title: "Almost Due",
-    subtitle: "Good moment for a quick message before they become overdue.",
-    icon: TimerReset,
-    accent: "bg-amber-100 text-amber-700",
-  },
-  {
-    key: "totalInteractions",
-    title: "Timeline Entries",
-    subtitle: "Calls, texts, and video check-ins already logged in the app.",
+    key: "onTrackFriends",
+    title: "On Track",
+    subtitle: "",
     icon: Activity,
-    accent: "bg-cyan-100 text-cyan-700",
+    accent: "bg-[#ecf7ee] text-[#295846]",
+  },
+  {
+    key: "needAttentionFriends",
+    title: "Need Attention",
+    subtitle: "",
+    icon: TimerReset,
+    accent: "bg-[#fff4df] text-[#d38b12]",
+  },
+  {
+    key: "interactionsThisMonth",
+    title: "Interactions This Month",
+    subtitle: "",
+    icon: AlertTriangle,
+    accent: "bg-[#eff4fb] text-slate-600",
   },
 ];
 
@@ -52,23 +52,20 @@ function HomePage() {
   }
 
   return (
-    <div className="section-wrap space-y-8 pt-8">
-      <section className="surface-card relative overflow-hidden px-6 py-12 text-center sm:px-10 sm:py-16">
-        <div className="pointer-events-none absolute -left-20 top-10 h-40 w-40 rounded-full bg-cyan-300/35 blur-3xl" />
-        <div className="pointer-events-none absolute -right-16 bottom-8 h-44 w-44 rounded-full bg-blue-300/30 blur-3xl" />
-        <div className="mx-auto max-w-3xl">
-          <span className="eyebrow">Relationship Dashboard</span>
-          <h1 className="mt-4 text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
-            Keep your people close without relying on memory alone.
+    <div className="section-wrap pb-10 pt-10">
+      <section className="px-4 py-12 text-center sm:px-6 sm:py-16">
+        <div className="mx-auto max-w-4xl">
+          <h1 className="font-heading text-4xl font-bold tracking-[-0.04em] text-slate-800 sm:text-5xl lg:text-[4rem]">
+            Friends to keep close in your life
           </h1>
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
-            KeenKeeper helps you see who needs a check-in, spot overdue
-            friendships, and log thoughtful contact moments in a couple of taps.
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-slate-500">
+            Your personal shelf of meaningful connections. Browse, tend, and
+            nurture the relationships that matter most.
           </p>
           <button
             type="button"
             onClick={scrollToFriends}
-            className="mt-8 inline-flex items-center gap-2 rounded-full bg-slate-950 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-slate-900/15 transition hover:-translate-y-0.5 hover:bg-slate-800"
+            className="mt-8 inline-flex items-center gap-2 rounded-md bg-[#295846] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#224839]"
           >
             <UserPlus size={18} />
             Add a Friend
@@ -76,7 +73,7 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+      <section className="mx-auto grid max-w-6xl gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {summaryConfig.map((item) => (
           <SummaryCard
             key={item.key}
@@ -89,18 +86,14 @@ function HomePage() {
         ))}
       </section>
 
-      <section id="friends-section" className="space-y-5 pb-4">
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <span className="eyebrow">Your Friends</span>
-            <h2 className="mt-3 text-3xl font-bold text-slate-950">
-              Who needs your attention next?
-            </h2>
-            <p className="mt-2 max-w-2xl text-sm leading-7 text-slate-500">
-              Every card shows the friend, their current contact status, and how
-              long it has been since the last check-in.
-            </p>
-          </div>
+      <section
+        id="friends-section"
+        className="mx-auto mt-10 max-w-6xl space-y-8 border-t border-slate-200 pt-10"
+      >
+        <div>
+          <h2 className="font-heading text-4xl font-bold tracking-[-0.03em] text-slate-800">
+            Your Friends
+          </h2>
         </div>
 
         {loading ? <LoadingScreen /> : null}
