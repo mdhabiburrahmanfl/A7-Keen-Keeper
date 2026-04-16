@@ -18,15 +18,15 @@ function Footer() {
 
           <div className="mt-8">
             <h3 className="text-2xl font-semibold text-white">Social Links</h3>
-            <div className="mt-5 flex items-center justify-center gap-4">
+            <div className="mt-5 flex items-center justify-center gap-3">
               {[instagramIcon, facebookIcon, twitterIcon].map((iconSource) => (
                 <button
                   key={iconSource}
                   type="button"
-                  className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-slate-900 transition hover:bg-white/90"
+                  className="flex h-[42px] w-[42px] items-center justify-center rounded-full bg-white text-slate-900 transition hover:bg-white/90"
                   aria-label="Social icon"
                 >
-                  <img src={iconSource} alt="" className="h-4 w-4" />
+                  <img src={iconSource} alt="" className="h-[18px] w-[18px]" />
                 </button>
               ))}
             </div>

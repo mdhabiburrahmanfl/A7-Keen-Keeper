@@ -7,7 +7,7 @@ function TimelineItem({ entry, friend }) {
   const Icon = meta.Icon;
 
   return (
-    <article className="dashboard-card flex flex-col gap-4 p-5 sm:flex-row sm:items-center sm:justify-between">
+    <article className="dashboard-card interactive-card flex flex-col gap-4 p-5 sm:flex-row sm:items-center sm:justify-between">
       <div className="flex items-start gap-4">
         <div
           className={`mt-1 inline-flex h-12 w-12 items-center justify-center rounded-xl ${meta.accentClass}`}

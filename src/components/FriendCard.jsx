@@ -5,12 +5,12 @@ function FriendCard({ friend }) {
   return (
     <Link
       to={`/friend/${friend.id}`}
-      className="dashboard-card group flex h-full flex-col items-center p-6 text-center transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(15,23,42,0.08)]"
+      className="dashboard-card interactive-card group flex h-full flex-col items-center p-6 text-center"
     >
       <img
         src={friend.picture}
         alt={friend.name}
-        className="h-20 w-20 rounded-full object-cover"
+        className="h-20 w-20 rounded-full object-cover transition duration-200 group-hover:scale-[1.04]"
       />
 
       <div className="mt-5 w-full">
@@ -25,7 +25,7 @@ function FriendCard({ friend }) {
           {friend.tags.map((tag) => (
             <span
               key={tag}
-              className="rounded-full bg-[#c6f6d4] px-3 py-1 text-xs font-medium uppercase text-[#295846]"
+              className="rounded-full bg-[#c6f6d4] px-3 py-1 text-xs font-medium uppercase text-[#295846] transition duration-200 group-hover:bg-[#b6efc8]"
             >
               {tag}
             </span>

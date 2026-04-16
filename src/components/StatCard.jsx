@@ -1,6 +1,6 @@
 function StatCard({ label, value, helpText }) {
   return (
-    <article className="dashboard-card flex min-h-[136px] flex-col items-center justify-center p-6 text-center">
+    <article className="dashboard-card interactive-card flex min-h-[136px] flex-col items-center justify-center p-6 text-center">
       <h3 className="font-heading text-5xl font-bold tracking-[-0.04em] text-[#295846]">
         {value}
       </h3>

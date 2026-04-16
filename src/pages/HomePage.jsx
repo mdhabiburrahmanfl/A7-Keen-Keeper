@@ -65,7 +65,7 @@ function HomePage() {
           <button
             type="button"
             onClick={scrollToFriends}
-            className="mt-8 inline-flex items-center gap-2 rounded-md bg-[#295846] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#224839]"
+            className="btn-primary mt-8 inline-flex items-center gap-2 rounded-md bg-[#295846] px-6 py-3 text-sm font-semibold text-white hover:bg-[#224839]"
           >
             <UserPlus size={18} />
             Add a Friend

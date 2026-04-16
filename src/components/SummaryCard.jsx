@@ -1,6 +1,6 @@
 function SummaryCard({ icon: Icon, title, value, subtitle, accent }) {
   return (
-    <article className="dashboard-card flex h-full flex-col items-center justify-center p-6 text-center">
+    <article className="dashboard-card interactive-card flex h-full flex-col items-center justify-center p-6 text-center">
       <div
         className={`mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full ${accent}`}
       >

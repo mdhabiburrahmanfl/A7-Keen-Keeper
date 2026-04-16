@@ -93,12 +93,12 @@ function FriendDetailsPage() {
     <div className="section-wrap pb-8 pt-14">
       <section className="mx-auto grid max-w-5xl gap-6 xl:grid-cols-[0.92fr_1.9fr]">
         <div className="space-y-4">
-          <article className="dashboard-card p-8 text-center">
+          <article className="dashboard-card interactive-card p-8 text-center">
             <div className="flex flex-col items-center gap-5">
               <img
                 src={friend.picture}
                 alt={friend.name}
-                className="h-20 w-20 rounded-full object-cover"
+                className="h-20 w-20 rounded-full object-cover transition duration-200 hover:scale-[1.04]"
               />
 
               <div>
@@ -146,21 +146,21 @@ function FriendDetailsPage() {
           <div className="space-y-3">
             <button
               type="button"
-              className="dashboard-card inline-flex w-full items-center justify-center gap-3 px-4 py-4 text-lg font-medium text-slate-800 transition hover:bg-slate-50"
+              className="dashboard-card btn-soft inline-flex w-full items-center justify-center gap-3 px-4 py-4 text-lg font-medium text-slate-800 hover:bg-slate-50"
             >
               <BellRing size={18} />
               Snooze 2 Weeks
             </button>
             <button
               type="button"
-              className="dashboard-card inline-flex w-full items-center justify-center gap-3 px-4 py-4 text-lg font-medium text-slate-800 transition hover:bg-slate-50"
+              className="dashboard-card btn-soft inline-flex w-full items-center justify-center gap-3 px-4 py-4 text-lg font-medium text-slate-800 hover:bg-slate-50"
             >
               <Archive size={18} />
               Archive
             </button>
             <button
               type="button"
-              className="dashboard-card inline-flex w-full items-center justify-center gap-3 px-4 py-4 text-lg font-medium text-[#ff4b47] transition hover:bg-rose-50"
+              className="dashboard-card btn-soft inline-flex w-full items-center justify-center gap-3 px-4 py-4 text-lg font-medium text-[#ff4b47] hover:bg-rose-50"
             >
               <Trash2 size={18} />
               Delete
@@ -181,7 +181,7 @@ function FriendDetailsPage() {
             />
           </section>
 
-          <section className="dashboard-card p-6">
+          <section className="dashboard-card interactive-card p-6">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
               <div>
                 <h2 className="text-2xl font-semibold text-[#295846]">
@@ -194,7 +194,7 @@ function FriendDetailsPage() {
               <button
                 type="button"
                 onClick={() => setIsEditingGoal((currentValue) => !currentValue)}
-                className="inline-flex items-center gap-2 rounded-md border border-slate-200 bg-slate-50 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-100"
+                className="btn-soft inline-flex items-center gap-2 rounded-md border border-slate-200 bg-slate-50 px-5 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-100"
               >
                 <PencilLine size={15} />
                 Edit
@@ -216,7 +216,7 @@ function FriendDetailsPage() {
                 <button
                   type="button"
                   onClick={handleGoalSave}
-                  className="rounded-md bg-[#295846] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#224839]"
+                  className="btn-primary rounded-md bg-[#295846] px-4 py-3 text-sm font-semibold text-white hover:bg-[#224839]"
                 >
                   Save
                 </button>
@@ -224,7 +224,7 @@ function FriendDetailsPage() {
             ) : null}
           </section>
 
-          <section className="dashboard-card p-6">
+          <section className="dashboard-card interactive-card p-6">
             <h2 className="text-2xl font-semibold text-[#295846]">
               Quick Check-In
             </h2>
@@ -234,9 +234,13 @@ function FriendDetailsPage() {
                   key={action.type}
                   type="button"
                   onClick={() => handleCheckIn(action.type)}
-                  className={`flex min-h-[116px] flex-1 flex-col items-center justify-center gap-3 rounded-xl px-5 py-4 text-xl font-medium transition ${action.className}`}
+                  className={`btn-soft group flex min-h-[116px] flex-1 flex-col items-center justify-center gap-3 rounded-xl px-5 py-4 text-xl font-medium ${action.className}`}
                 >
-                  <img src={action.icon} alt="" className="h-8 w-8" />
+                  <img
+                    src={action.icon}
+                    alt=""
+                    className="h-8 w-8 transition duration-200 group-hover:scale-105"
+                  />
                   {action.label}
                 </button>
               ))}
